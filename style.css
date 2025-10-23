@@ -39,6 +39,20 @@ body.dark-mode {
     --highlight: #FF4040;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight);
+}
+
 header {
     width: 100%;
     height: 80px;
@@ -143,7 +157,215 @@ nav.scrolled {
     transform: translateX(100%);
     z-index: 9999;
     transition: transform .8s ease-in-out;
+    overflow-x: hidden;
 
+}
+
+.sidebar-links {
+    width: auto;
+    font-size: 1em;
+    color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: "Poppins";
+    margin-top: 40px;
+    gap: 35px;
+}
+
+.sidebar-links li:hover {
+    color: #FF0A0A;
+    cursor: pointer;
+}
+
+.sidebar .toggle {
+    width: 40px;
+    display: block;
+    color: var(--bg-color);
+    justify-self: end;
+    margin-top: 20px;
+    margin-right: 10px;
+
+}
+
+.sidebar .toggle i {
+    width: 100%;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.sidebar-logo {
+    width: auto;
+    z-index: 10;
+    justify-self: center;
+    padding-top: 20px;
+}
+
+.sidebar-logo h1 {
+    font-family: "Playfair display", sans-serif;
+    color: var(--bg-color);
+    text-transform: uppercase;
+    font-size: 1.9rem;
+}
+
+.sidebar-footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 180px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 2px solid var(--bg-color);
+    padding-top: 10px;
+    font-size: 1.1rem;
+    color: var(--bg-color);
+}
+
+main {
+    width: 100%;
+    height: auto;
+    /* margin-top: 100px; */
+}
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1606664515524-ed2f2f8a7b3b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    /* background: var(--bg-color); */
+    background: var(--nav-bg);
+}
+
+/* .intro-overlay {
+    position: absolute;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  } */
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    color: var(--accent);
+    font-family: "Playfair Display", serif;
+    animation: fadeUp 1.8s ease-in-out forwards;
+}
+
+.intro-title {
+    font-size: 3.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.intro-para {
+    font-size: 1.2rem;
+    color: var(--link-color);
+    margin-bottom: 40px;
+}
+
+.intro-btn {
+    padding: 14px 40px;
+    font-size: 1rem;
+    background: var(--accent);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.intro-btn:hover {
+    background: var(--highlight);
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 4px solid var(--accent);
+}
+
+.header {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+}
+
+.txt {
+    align-self: flex-start;
+    height: auto;
+    width: auto;
+    margin-top: 9%;
+    color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.txt h1 {
+    font-size: 3.8rem;
+    font-family: "Cinzel Decorative", serif;
+}
+
+.hero-logo {
+    width: 100px;
+    height: 100px;
+    background: url(./assets/rollsroyce/logo.png);
+    background-size: contain;
+    /* z-index: 10; */
+    margin-top: 8%;
+}
+
+.txt p {
+    font-size: 1.2rem;
+    letter-spacing: 10px;
+
+}
+
+.main {
+    width: 70%;
+    height: 50vh;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.car {
+    width: auto;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.car img {
+    width: 100%;
+    height: 100%;
 }
 
 @media (max-width:992px) {
@@ -164,6 +386,28 @@ nav.scrolled {
     .toggle {
         padding-right: 30px;
     }
+
+    .intro-title {
+        font-size: 2.6rem;
+    }
+
+    .intro-para {
+        font-size: 1rem;
+    }
+
+    .intro-btn {
+        padding: 10px 28px;
+        font-size: 0.9rem;
+    }
+
+    .txt h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-logo {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 @media (max-width:600px) {
@@ -182,30 +426,55 @@ nav.scrolled {
 }
 
 @media (max-width:480px) {
-.logo{
-    margin-left: 25px;
-}
-   .logo h1{
-    font-size: 1.4rem;
-   }
-    .car-toggle i {
-   font-size: 1.2rem;
+    .logo {
+        margin-left: 25px;
     }
-    .rope{
+
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    .car-toggle i {
+        font-size: 1.2rem;
+    }
+
+    .rope {
         border-bottom: 1px solid;
     }
-}
-@media (max-width:420px) {
-.logo{
-    margin-left: 10px;
-}
-   .logo h1{
-    font-size: 1.3rem;
-   }
-    .car-toggle i {
-   font-size: 1rem;
+
+    .txt {
+        margin-left: 10px;
     }
-    .rope{
+
+    .txt h1 {
+        font-size: 2rem;
+    }
+
+    .txt p {
+        font-size: .8rem;
+        letter-spacing: 5px;
+    }
+
+    .hero-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width:420px) {
+    .logo {
+        margin-left: 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .car-toggle i {
+        font-size: 1rem;
+    }
+
+    .rope {
         border-bottom: 1px solid;
     }
 }

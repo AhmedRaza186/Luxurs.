@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
+
 <body class="dark-mode">
     <header>
         <nav>
-            <div class="logo"><h1>luxurs.</h1></div>
+            <div class="logo">
+                <h1>luxurs.</h1>
+            </div>
             <ul class="links">
                 <li>Home</li>
                 <li>About</li>
@@ -18,30 +22,76 @@
                 <li>Contact</li>
                 <li>Help</li>
             </ul>
+            <div class="car-toggle" onclick="openSidebar()">
+                <i class="fa-solid fa-car-side fa-flip-horizontal"></i>
+                <div class="rope">
+                </div>
+            </div>
             <div class="toggle" onclick="changeTheme()">
                 <i class="fa-solid fa-toggle-on"></i>
             </div>
-            <div class="car-toggle" onclick= "openSidebar()">
-                <i class="fa-solid fa-car-side fa-flip-horizontal"></i>
-                <div class="rope">
-                    </div>
-                </div>
         </nav>
     </header>
     <div class="sidebar">
-        <ul class="links">
+        <div class="toggle" onclick="changeTheme()">
+            <i class="fa-solid fa-toggle-on"></i>
+        </div>
+        <div class="sidebar-logo">
+            <h1>luxurs.</h1>
+        </div>
+        <ul class="sidebar-links">
             <li>Home</li>
             <li>About</li>
             <li>Gallery</li>
             <li>Contact</li>
             <li>Help</li>
         </ul>
-   
-    </div>
+        <div class="sidebar-footer">
+            <p>Follow Us</p>
+            <div class="socials">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
 
+    </div>
+    <main>
+        <section class="intro">
+            <!-- <div class="intro-overlay"></div> -->
+            <div class="intro-content">
+                <h1 class="intro-title">Drive Beyond Limit</h1>
+                <p class="intro-para">Experience motion. Style. Power. By
+                    <br> LUXURS
+                </p>
+                <button class="intro-btn">Explore Cars</button>
+            </div>
+        </section>
+        <div class="hero hero1">
+            <div class="header">
+                <div class="txt">
+                    <h1>Rolls-Royce</h1>
+                    <p>PHANTOM</p>
+                </div>
+                <div class="hero-logo"></div>
+            </div>
+            <div class="main">
+                <div class="car">
+                    <img src="./assets/rollsroyce/roycelightsoff.png" alt="" onmouseover="lightsOn()" onmouseout="lightsOff()">
+                </div>
+            </div>
+        </div>
+
+        <div class="hero hero2"></div>
+        <div class="hero hero3"></div>
+        <div class="hero hero4"></div>
+        <div class="hero hero5"></div>
+        <div class="hero hero6"></div>
+    </main>
 
 
 
     <script src="app.js"></script>
 </body>
+
 </html>

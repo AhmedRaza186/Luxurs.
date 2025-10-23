@@ -17,7 +17,12 @@ function closeSidebar() {
   document.querySelector('.car-toggle').style.transform = 'translateX(0vw)'
   document.querySelector('.car-toggle').setAttribute('onclick','openSidebar()')
 }
-
+function lightsOn(){
+  document.querySelector('.car img').src = "./assets/rollsroyce/roycelightson.png"
+}
+function lightsOff(){
+  document.querySelector('.car img').src = "./assets/rollsroyce/roycelightsoff.png"
+}
 // function closeSidebar() {
 //   const sidebar = document.querySelector('.sidebar')
 //   sidebar.style.right = '-100%'
