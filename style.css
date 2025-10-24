@@ -517,7 +517,8 @@ main {
     }
 
     .header {
-        margin-top: 50px;
+        margin-top: 0px;
+        padding-top: 50px;
     }
 .car img {
     /* width: 80%;
@@ -567,6 +568,7 @@ main {
 }
 
 @media (max-width:420px) {
+
     .logo {
         margin-left: 10px;
     }
@@ -574,7 +576,10 @@ main {
     .logo h1 {
         font-size: 1.3rem;
     }
-
+    .header {
+        /* margin-top: 50px; */
+        padding-top: 80px;
+    }
     .txt h1 {
         font-size: 2.2rem;
     }
