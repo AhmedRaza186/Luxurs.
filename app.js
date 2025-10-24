@@ -39,7 +39,8 @@ function carEnter(hero) {
 }
 let carSound = new Audio("./assets/rollsroyce/carstart.mp3")
 function carStart() {
-  document.querySelector('.car img').src = "./assets/rollsroyce/roycelightson.png"
+  document.querySelector('.desktopcar img').src = "./assets/rollsroyce/roycelightson.png"
+  document.querySelector('.mobilecar img').src = "./assets/rollsroyce/roycemobilelightson.png"
   carSound.volume = 0.7
   carSound.play()
 

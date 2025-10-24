@@ -521,8 +521,7 @@ main {
         padding-top: 50px;
     }
 .car img {
-    /* width: 80%;
-    height: 80%; */
+    
     object-fit: contain;
 }
     .car {
