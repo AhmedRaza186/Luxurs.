@@ -23,7 +23,15 @@ body.light-mode {
     --link-hover: #5b0302;
     --accent: #880101;
     --highlight: #FF0A0A;
-    --nav-shadow: 1px -3px 6px 3px #880101
+    --nav-shadow: 1px -3px 6px 3px #880101;
+    --carglow: radial-gradient(circle at center,
+            rgba(255, 255, 200, 1),
+            /* warm pale yellow — center glow */
+            rgba(255, 220, 150, 1),
+            /* golden-orange mid tone */
+            rgba(255, 200, 100, 1),
+            /* soft fade outward */
+            rgba(255, 255, 255, 0.4));
 }
 
 body.dark-mode {
@@ -37,6 +45,10 @@ body.dark-mode {
     --link-hover: #FF0A0A;
     --accent: #EDE7C7;
     --highlight: #FF4040;
+    --carglow: radial-gradient(circle at center,
+            rgba(255, 200, 0, 0.8),
+            rgba(255, 100, 0, 0.4),
+            rgba(255, 0, 0, 0));
 }
 
 ::-webkit-scrollbar {
@@ -89,6 +101,7 @@ nav.scrolled {
     color: var(--accent);
     text-transform: uppercase;
     font-size: 1.9rem;
+    text-wrap: wrap;
 }
 
 .links {
@@ -313,18 +326,22 @@ main {
     width: 100%;
     height: 50vh;
     display: flex;
+    opacity: 0;
     justify-content: center;
+    /* transition: opacity .5s ease-in-out; */
 }
 
 .txt {
     align-self: flex-start;
     height: auto;
     width: auto;
-    margin-top: 9%;
+    margin-top: 10%;
     color: var(--accent);
     display: flex;
     flex-direction: column;
     align-items: center;
+    -webkit-text-stroke: 1px goldenrod;
+
 }
 
 .txt h1 {
@@ -338,7 +355,7 @@ main {
     background: url(./assets/rollsroyce/logo.png);
     background-size: contain;
     /* z-index: 10; */
-    margin-top: 8%;
+    margin-top: 9%;
 }
 
 .txt p {
@@ -357,16 +374,75 @@ main {
 }
 
 .car {
+    position: relative;
+    top: 43px;
     width: auto;
     height: 70%;
     display: flex;
     justify-content: center;
+    transform: translateX(100vw);
+    margin-top: 40px;
+
+}
+
+.mobilecar {
+    display: none;
+    transform: perspective(10px) translateZ(-1px) translateX(300px) scale(0.5);
+    opacity: 0;
+}
+
+@keyframes carEnter {
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes carEnterMobile {
+
+    to {
+        transform: perspective(600px) translateZ(0) translateX(0px) scale(1);
+        opacity: 1;
+    }
 }
 
 .car img {
     width: 100%;
     height: 100%;
 }
+
+.glow {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    height: 60%;
+    background: var(--carglow);
+    filter: blur(40px);
+    opacity: 0.8;
+    animation: fireGlow 2s infinite ease-in-out alternate;
+    z-index: -1;
+}
+
+@keyframes fireGlow {
+    0% {
+        transform: scaleX(1) scaleY(0.9) translateY(0);
+        filter: blur(35px);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scaleX(1.1) scaleY(1.1) translateY(-5px);
+        filter: blur(45px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(0.95) scaleY(0.85) translateY(0);
+        filter: blur(40px);
+        opacity: 0.6;
+    }
+}
+
 
 @media (max-width:992px) {
     .toggle {
@@ -401,12 +477,24 @@ main {
     }
 
     .txt h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
+    }
+
+    .main {
+        width: 60vw;
     }
 
     .hero-logo {
         width: 80px;
         height: 80px;
+    }
+
+    .desktopcar {
+        display: none;
+    }
+
+    .mobilecar {
+        display: block;
     }
 }
 
@@ -422,6 +510,23 @@ main {
 
     .car-toggle {
         display: block;
+    }
+
+    .hero {
+        height: 80vh;
+    }
+
+    .header {
+        margin-top: 50px;
+    }
+.car img {
+    /* width: 80%;
+    height: 80%; */
+    object-fit: contain;
+}
+    .car {
+        margin-top: 0px;
+        margin-bottom: 90px;
     }
 }
 
@@ -447,7 +552,7 @@ main {
     }
 
     .txt h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .txt p {
@@ -470,6 +575,10 @@ main {
         font-size: 1.3rem;
     }
 
+    .txt h1 {
+        font-size: 2.2rem;
+    }
+
     .car-toggle i {
         font-size: 1rem;
     }
@@ -477,4 +586,12 @@ main {
     .rope {
         border-bottom: 1px solid;
     }
+      .car {
+        margin-top: 0px;
+        margin-bottom: 110px;
+    }
+    .car img {
+    width: 115%;
+    height: 115%;
+}
 }

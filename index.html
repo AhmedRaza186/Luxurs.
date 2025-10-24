@@ -67,7 +67,7 @@
                 <button class="intro-btn">Explore Cars</button>
             </div>
         </section>
-        <div class="hero hero1">
+        <div class="hero hero1" onmouseover="carEnter(this)" >
             <div class="header">
                 <div class="txt">
                     <h1>Rolls-Royce</h1>
@@ -76,8 +76,13 @@
                 <div class="hero-logo"></div>
             </div>
             <div class="main">
-                <div class="car">
-                    <img src="./assets/rollsroyce/roycelightsoff.png" alt="" onmouseover="lightsOn()" onmouseout="lightsOff()">
+                <div class="car desktopcar">
+                    <div class="glow"></div>
+                    <img src="./assets/rollsroyce/roycelightsoff.png" alt="" onmouseover="doorsOpen()" onmouseout="doorsClose()" onclick="carStart()" >
+                </div>
+                <div class="car mobilecar">
+                    <div class="glow"></div>
+                    <img src="./assets/rollsroyce/roycemobilelightsoff.png" alt="" onmouseover="doorsOpen()" onmouseout="doorsClose()" onclick="carStart()" >
                 </div>
             </div>
         </div>
