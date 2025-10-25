@@ -11,6 +11,7 @@ function openSidebar() {
   sidebar.style.transform = 'translateX(0%)'
   document.querySelector('.car-toggle').style.transform = 'translateX(-60vw)'
   document.querySelector('.car-toggle').setAttribute('onclick', 'closeSidebar()')
+  document.querySelector('body').style.overflowY = 'hidden'
 }
 
 function closeSidebar() {
@@ -18,6 +19,7 @@ function closeSidebar() {
   sidebar.style.transform = 'translateX(100%)'
   document.querySelector('.car-toggle').style.transform = 'translateX(0vw)'
   document.querySelector('.car-toggle').setAttribute('onclick', 'openSidebar()')
+    document.querySelector('body').style.overflowY = 'visible'
 }
 
 function doorsOpen() {
