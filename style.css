@@ -5,7 +5,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+.hero, .main, .car {
+  overflow: visible;
+}
 body {
     height: 100vh;
     width: 100vw;
@@ -101,7 +107,6 @@ nav.scrolled {
     color: var(--accent);
     text-transform: uppercase;
     font-size: 1.9rem;
-    text-wrap: wrap;
 }
 
 .links {
@@ -373,7 +378,7 @@ main {
     align-items: flex-end;
 }
 
-.car {
+.car{
     position: relative;
     top: 43px;
     width: auto;
@@ -528,6 +533,15 @@ main {
         margin-top: 0px;
         margin-bottom: 90px;
     }
+}
+@media (max-width: 600px) {
+  body {
+    perspective: 800px;
+    transform-style: preserve-3d;
+  }
+  .car img {
+    backface-visibility: hidden;
+  }
 }
 
 @media (max-width:480px) {
