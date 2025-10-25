@@ -22,12 +22,16 @@ function closeSidebar() {
     document.querySelector('body').style.overflowY = 'visible'
 }
 
-function doorsOpen() {
-  document.querySelector('.car img').src = "./assets/rollsroyce/roycedoorsopen.png"
+function doorsOpen(img) {
+let folderName = img.src.split('/')
+folderName = folderName[folderName.length - 2]
+img.src = `./assets/${folderName}/doorsopen.png`
 }
 
-function doorsClose() {
-  document.querySelector('.car img').src = "./assets/rollsroyce/roycelightsoff.png"
+function doorsClose(img) {
+let folderName = img.src.split('/')
+folderName = folderName[folderName.length - 2]
+img.src = `./assets/${folderName}/lightsoff.png`
 }
 
 function carEnter(hero) {
@@ -40,9 +44,11 @@ function carEnter(hero) {
   hero.setAttribute('onmouseover', '')
 }
 let carSound = new Audio("./assets/rollsroyce/carstart.mp3")
-function carStart() {
-  document.querySelector('.desktopcar img').src = "./assets/rollsroyce/roycelightson.png"
-  document.querySelector('.mobilecar img').src = "./assets/rollsroyce/roycemobilelightson.png"
+function carStart(img) {
+  let folderName = img.src.split('/')
+folderName = folderName[folderName.length - 2]
+ img.src = `./assets/${folderName}/lightson.png`
+  img.src = `./assets/${folderName}/mobilelightson.png`
   carSound.volume = 0.7
   carSound.play()
 
