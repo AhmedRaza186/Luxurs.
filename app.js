@@ -48,6 +48,15 @@ function carStart(img) {
   let folderName = img.src.split('/')
 folderName = folderName[folderName.length - 2]
  img.src = `./assets/${folderName}/lightson.png`
+  carSound.volume = 0.7
+  carSound.play()
+
+}
+
+
+function carStartMob(img) {
+  let folderName = img.src.split('/')
+folderName = folderName[folderName.length - 2]
   img.src = `./assets/${folderName}/mobilelightson.png`
   carSound.volume = 0.7
   carSound.play()
