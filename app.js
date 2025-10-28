@@ -1,9 +1,11 @@
 function changeTheme() {
-  document.body.classList.toggle("dark-mode");
-  document.body.classList.toggle("light-mode");
-  let toggle = document.querySelector('.toggle i');
-  toggle.classList.toggle('fa-toggle-on');
-  toggle.classList.toggle('fa-toggle-off');
+  document.body.classList.toggle("dark-mode")
+  document.body.classList.toggle("light-mode")
+  let toggle = document.querySelectorAll('.toggle i')
+  toggle.forEach(icon => {
+    icon.classList.toggle('fa-toggle-on')
+    icon.classList.toggle('fa-toggle-off')
+  })
 }
 
 function openSidebar() {
