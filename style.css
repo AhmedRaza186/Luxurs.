@@ -437,11 +437,11 @@ main {
     background: var(--carglow);
     filter: blur(40px);
     opacity: 0.8;
-    animation: fireGlow 2s infinite ease-in-out alternate;
+    animation: Glow 2s infinite ease-in-out alternate;
     z-index: -1;
 }
 
-@keyframes fireGlow {
+@keyframes Glow {
     0% {
         transform: scaleX(1) scaleY(0.9) translateY(0);
         filter: blur(35px);
@@ -646,16 +646,6 @@ main {
     }
 }
 
-@media (max-width: 600px) {
-    body {
-        perspective: 800px;
-        transform-style: preserve-3d;
-    }
-
-    .car img {
-        backface-visibility: hidden;
-    }
-}
 
 @media (max-width:480px) {
     .logo {
